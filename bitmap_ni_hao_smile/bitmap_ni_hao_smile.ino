@@ -4,11 +4,8 @@
 #include <Fonts/FreeMonoBoldOblique12pt7b.h>
 #include <Fonts/FreeSerif9pt7b.h>
 
-// If you're using the full breakout...
 Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
-// If you're using the FeatherWing version
-//Adafruit_IS31FL3731_Wing matrix = Adafruit_IS31FL3731_Wing();
-//
+
 static const uint8_t PROGMEM
   smile_bmp[] =
   { B00111100,
@@ -20,33 +17,15 @@ static const uint8_t PROGMEM
     B01000010,
     B00111100 
   };
-//  neutral_bmp[] =
-//  { B00111100,
-//    B01000010,
-//    B10100101,
-//    B10000001,
-//    B10111101,
-//    B10000001,
-//    B01000010,
-//    B00111100 },
-//  frown_bmp[] =
-//  { B00111100,
-//    B01000010,
-//    B10100101,
-//    B10000001,
-//    B10011001,
-//    B10100101,
-//    B01000010,
-//    B00111100 };
 
 const unsigned char ni [] PROGMEM = {
-0x02, 0x40, 0x04, 0xfe, 0x09, 0x04, 0x14, 0x20, 0x04, 0xa8, 0x04, 0xa8, 0x05, 0x24, 0x04, 0x20, 
-0x04, 0xe0, 
+  0x02, 0x40, 0x04, 0xfe, 0x09, 0x04, 0x14, 0x20, 0x04, 0xa8, 0x04, 0xa8, 0x05, 0x24, 0x04, 0x20, 
+  0x04, 0xe0, 
 };
 
 const unsigned char hao [] PROGMEM = {
-0x08, 0x00, 0x10, 0xf8, 0x7e, 0x10, 0x22, 0x20, 0x44, 0x20, 0x29, 0xfc, 0x10, 0x20, 0x28, 0xa0, 
-0x44, 0x60, 
+  0x08, 0x00, 0x10, 0xf8, 0x7e, 0x10, 0x22, 0x20, 0x44, 0x20, 0x29, 0xfc, 0x10, 0x20, 0x28, 0xa0, 
+  0x44, 0x60, 
 };
 
 
@@ -89,10 +68,5 @@ void loop() {
   matrix.clear();
   matrix.drawBitmap(4, 0, smile_bmp, 8, 9, 100);
   delay(1300);
-
-  String thisString = String(13);
-
-
-  
   Serial.println("Loop complete!");
 }
